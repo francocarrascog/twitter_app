@@ -1,0 +1,17 @@
+
+<div class="list-group">
+<br><br>
+<% if user_signed_in? %>
+    <div class="row">
+        <%= render 'tweets/form', tweet: @tweet %>
+    </div>
+<% end %>
+
+    <% @tweets.each do |tweet| %>
+        <%= render 'tweets/single_tweet', tweet: tweet %>
+    <% end %>
+    <hr>
+    
+    <%= paginate @tweets %>
+    
+</div>

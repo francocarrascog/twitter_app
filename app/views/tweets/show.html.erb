@@ -1,0 +1,20 @@
+<br><br>
+<div class="col-3 border-white p-0 mt-1 m-auto">
+  <p>
+    <strong>Content:</strong>
+    <%= @tweet.content %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @tweet.user.to_s %>
+  </p>
+
+  <h4>Likes</h4>
+  <% @tweet.liking_users.each do |user| %>
+    <%= image_tag(user.avatar, class: "avatar-in-tweet rounded-circle", size: "50x50") %>
+  <% end %>
+  <br>
+  <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+  <%= link_to 'Back', root_path %>
+</div>
